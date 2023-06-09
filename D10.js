@@ -441,7 +441,7 @@ console.log('ESERCIZIO 16',sumAllTheYears(onlyTheYears(movies)))
 const searchByTitle = function(string){
   let array = []
   movies.forEach((e)=>{
-    if(e.Title.includes(string)){
+    if(e.Title.includes(string)){ //avrei dovuto confrontare stringa e titolo portando entrmbi a caratteri minuscoli
       array.push(e)
     }
   }) 
@@ -460,14 +460,14 @@ const searchAndDivide  = function (string) {
   const object ={}
 const match = []
 const unmatch =[]
-match.push (movies.filter( movie => movie.Title.includes (string) ))
+match.push (movies.filter( movie => movie.Title.includes (string) )) //avrei dovuto confrontare stringa e titolo portando entrmbi a caratteri minuscoli
 unmatch.push (movies.filter( movie => !movie.Title.includes (string)))
 object.Match = match
 object.Unmatch = unmatch
 return object
 }
 
-console.log('ESERCIZIO 18',searchAndDivide ('lord'));
+console.log('ESERCIZIO 18',searchAndDivide ('Lord'));
 
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
