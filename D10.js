@@ -217,6 +217,25 @@ console.log (howManyDays('2023-06-08'))
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
+const isTodayMyBirthday = function (MyBirthdaymonth,myBirthdayDay) { 
+  let date = new Date () 
+  let today = date.getDate ()
+  let thisMonth = date.getMonth () + 1 
+ 
+  if (today === myBirthdayDay && thisMonth === MyBirthdaymonth) {
+
+return ' true, auguri oggi è il tuo compleanno!'
+
+  }
+  else {
+return 'false, oggi non è il tuo compleanno'
+  }
+ 
+ }
+//  inserire mese e giorno del compleanno nei paramteri secondo lo standard ISO (ISO 8061) ovvero (anno, mese, giorno) in numeri
+ console.log (isTodayMyBirthday(12,4))
+
+
 
 // Arrays & Oggetti
 
