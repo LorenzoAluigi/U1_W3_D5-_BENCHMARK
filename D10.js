@@ -142,7 +142,7 @@ return string.slice (1)
 const onlyLetters = function (string) {
 return string.replace (/\d+/g,'')
 }
-console.log(onlyLetters ('ciao 4 sono 5 e 6 forse 7 901288888888 ciao 4555 789'));
+console.log('ESERCIZIO 5', onlyLetters ('ciao 4 sono 5 e 6 forse 7 901288888888 ciao 4555 789'));
 
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
@@ -150,7 +150,7 @@ console.log(onlyLetters ('ciao 4 sono 5 e 6 forse 7 901288888888 ciao 4555 789')
 
 const isThisAnEmail = function (string) {
     let email = string.split ('')
-    console.log (email)
+    
     const validator = (element) => element === '@'
     let validation = email.some (validator)
     return validation
@@ -168,7 +168,7 @@ const whatDayIsIt = function(){
   const numberDay = today.getDay()
   return numberDay
 }
-console.log(whatDayIsIt())
+console.log('ESERCIZIO 7', whatDayIsIt())
 
 
 
@@ -196,7 +196,7 @@ const rollTheDices = function (number) {
   
 }
 
-console.log (rollTheDices (2))
+console.log ('ESERCIZIO 8', rollTheDices (2))
 
 
 /* ESERCIZIO 9
@@ -211,7 +211,7 @@ const howManyDays = function (stringDate) {
 return daysPassed
 }
 
-console.log (howManyDays('2023-06-08'))
+console.log ('ESERCIZIO 9', howManyDays('2023-06-08'))
 
 
 /* ESERCIZIO 10
@@ -233,7 +233,7 @@ return 'false, oggi non è il tuo compleanno'
  
  }
 //  inserire mese e giorno del compleanno nei paramteri secondo lo standard ISO (ISO 8061) ovvero (anno, mese, giorno) in numeri, in questo caso 
- console.log (isTodayMyBirthday(12,4))
+ console.log ('ESERCIZIO 10',isTodayMyBirthday(12,4))
 
 
 
@@ -373,7 +373,7 @@ const movies = [
   return object
  }
 // utilizzo oggetto dei primi esercizi
-console.log(deleteProp ('name',me))
+console.log('ESERCIZIO 11',deleteProp ('name',me))
 
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
@@ -401,7 +401,7 @@ const countMovies = function (array) {
   return array.length
 
 }
-console.log (countMovies(movies))
+console.log ('ESERCIZIO 13', countMovies(movies))
 
 /* ESERCIZIO 14
   Scrivi una funzione chiamata "onlyTheYears" che crea un array con solamente gli anni di uscita dei film contenuti nell'array "movies" fornito.
@@ -410,7 +410,7 @@ console.log (countMovies(movies))
 const onlyTheYears = (array) => {
   return array.map((elem) => elem.Year)
 }
-console.log(onlyTheYears(movies))
+console.log('ESERCIZIO 14', onlyTheYears(movies))
 
 /* ESERCIZIO 15
   Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
@@ -421,7 +421,7 @@ const onlyInLastMillennium = (array) => {
   })
 }
 
-console.log(onlyInLastMillennium(movies))
+console.log('ESERCIZIO 15', onlyInLastMillennium(movies))
 /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
@@ -431,7 +431,7 @@ const sumAllTheYears = (array) => {
   return array.reduce((a, cVal) => a + parseInt(cVal), 0)
 }
 
-console.log(sumAllTheYears(onlyTheYears(movies)))
+console.log('ESERCIZIO 16',sumAllTheYears(onlyTheYears(movies)))
 
 
 /* ESERCIZIO 17
@@ -448,7 +448,7 @@ const searchByTitle = function(string){
   return array
   
 }
-console.log(searchByTitle('Av'))
+console.log('ESERCIZIO 17',searchByTitle('Av'))
 
 
 /* ESERCIZIO 18
@@ -456,9 +456,18 @@ console.log(searchByTitle('Av'))
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
 */
 
+const searchAndDivide  = function (string) {
+  const object ={}
+const match = []
+const unmatch =[]
+match.push (movies.filter( movie => movie.Title.includes (string) ))
+unmatch.push (movies.filter( movie => !movie.Title.includes (string)))
+object.Match = match
+object.Unmatch = unmatch
+return object
+}
 
-
-
+console.log('ESERCIZIO 18',searchAndDivide ('lord'));
 
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
@@ -471,7 +480,7 @@ const removeIndex = function (number) {
   return array
   }
 
-console.log(removeIndex (1));
+console.log('ESERCIZIO 19',removeIndex (1));
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
@@ -569,7 +578,7 @@ const halfTree = function (height) {
 
   return tree;
 };
-console.log(halfTree(5));
+console.log('ESERCIZIO 27',halfTree(5));
 
 
 /* ESERCIZIO 28
@@ -592,7 +601,7 @@ const tree = function (height) {
   }
   return tree;
 };
-console.log(tree(5));
+console.log('ESERCIZIO 28',tree(5));
 
 
 
@@ -607,10 +616,10 @@ if (number % i === 0 ) {
   booleanTest = false
 }}
 if (booleanTest === true) {
-  console.log('è un numero primo')
+  console.log('ESERCIZIO 29','è un numero primo')
 } 
 else {
-  console.log('non è un numero primo');
+  console.log('ESERCIZIO 29', 'non è un numero primo');
 }}
 }
 
